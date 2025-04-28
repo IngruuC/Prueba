@@ -318,6 +318,10 @@
             <section>
                 <p>Una fuerte tormenta solar que se dirige a la Tierra podría producir en la noche de este martes coloridas auroras en latitudes donde habitualmente no ocurren estos fenómenos. También podrían registrarse <strong>alteraciones en las comunicaciones de radio</strong> y problemas con los GPS.</p>
 
+                <a href="https://www.lacapital.com.ar/una-tormenta-geomagnetica-severa-impacta-todo-el-planeta-n10125197.html" style="display: inline-block; margin-top: 10px; font-weight: bold; color: #007bff; text-decoration: none;">
+                    >> Leer más: Una tormenta geomagnética severa impacta en todo el planeta
+                </a>
+
                 <p>El Sol emitió enormes ráfagas de energía a principios de semana, llamadas eyecciones de masa coronal, y los meteorólogos del clima espacial anunciaron una alerta de tormenta geomagnética.</p>
 
                 <p>La intensidad del espectáculo de luces dependerá de cómo el campo magnético de la Tierra interactúe con las ráfagas solares, dijo Shawn Dahl, del Centro de Predicción del Clima Espacial de la Oficina Nacional de Administración Oceánica y Atmosférica (Noaa).</p>
@@ -350,6 +354,9 @@
             </section>
         </article>
         
+
+
+        <!-- Botones para compartir -->
         <section class="social-share">
             <h3>Compartir noticia</h3>
             <div class="share-buttons">
@@ -375,7 +382,9 @@
         </section>
 
 
-        <!-- Script de compartir -->
+
+
+        <!-- Script para compartir -->
 <script>
     const url = encodeURIComponent(window.location.href);
     const title = encodeURIComponent(document.title);
@@ -393,6 +402,10 @@
     });
   </script>
         
+
+    
+
+        <!-- Links/imagenes para seccion de Noticias Relacionadas -->
         <section class="related-news">
             <h2>Noticias relacionadas</h2>
             <a href="https://www.lacapital.com.ar/informacion-general/tragedia-napoles-al-menos-cuatro-muertos-desplomarse-la-cabina-un-teleferico-n10190884.html" target="_blank" style="text-decoration: none; color: inherit;">
@@ -430,11 +443,15 @@
             </div>
         </section>
 
+
+
+
+         <!-- Formulario para suscribirse -->
         <section class="subscription-form">
             <h2>Mantente informado sobre fenómenos espaciales</h2>
             <p>Suscríbete a nuestro boletín para recibir alertas de auroras boreales y las últimas noticias sobre clima espacial.</p>
             
-            <form action="/suscripcion" method="post">
+            <form action="https://formspree.io/f/mpwdqzbg" method="post"> <!-- Metodo para enviar formulario con FORMSPREE.IO -->
                 <div class="form-group">
                     <label for="nombre">Nombre completo:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
@@ -474,9 +491,567 @@
                     <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad, País">
                 </div>
                 
+                <input type="hidden" name="_subject" value="Nueva suscripción al boletín">
                 <button type="submit">Suscribirme ahora</button>
             </form>
         </section>
+
+
+
+
+<!-- Sección de comentarios -->
+<section class="comments-section">
+    <h2>Comentarios</h2>
+    <div class="comment-count">
+        <span id="comment-count">3</span> comentarios
+    </div>
+    
+    <!-- Formulario para añadir comentarios -->
+    <div class="comment-form">
+        <h3>Deja tu comentario</h3>
+        <form id="comment-form">
+            <div class="form-group">
+                <label for="commenter-name">Nombre:</label>
+                <input type="text" id="commenter-name" name="commenter-name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="commenter-email">Email (no será publicado):</label>
+                <input type="email" id="commenter-email" name="commenter-email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="comment-text">Comentario:</label>
+                <textarea id="comment-text" name="comment-text" rows="4" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-comment">Publicar comentario</button>
+        </form>
+    </div>
+    
+    <!-- Lista de comentarios -->
+    <div class="comments-list">
+        <!-- Comentario 1 -->
+        <div class="comment">
+            <div class="comment-avatar">
+                <img src="https://w7.pngwing.com/pngs/915/511/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png" alt="Avatar de usuario">
+            </div>
+            <div class="comment-content">
+                <div class="comment-header">
+                    <span class="commenter-name">Laura Gómez</span>
+                    <span class="comment-date">15 de abril de 2025, 14:30</span>
+                </div>
+                <div class="comment-body">
+                    <p>¡Increíble! Nunca he visto auroras boreales en persona. ¿Alguien sabe desde qué zonas de Argentina podríamos llegar a verlas si la tormenta es lo suficientemente fuerte?</p>
+                </div>
+                <div class="comment-actions">
+                    <button class="like-btn" data-comment-id="1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"></path>
+                            <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                        </svg>
+                        <span class="like-count">12</span>
+                    </button>
+                    <button class="reply-btn" data-comment-id="1">Responder</button>
+                </div>
+                
+                <!-- Respuesta al comentario 1 -->
+                <div class="comment reply">
+                    <div class="comment-avatar">
+                        <img src="https://w7.pngwing.com/pngs/945/530/png-transparent-male-avatar-boy-face-man-user-flat-classy-users-icon.png" alt="Avatar de usuario">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="commenter-name">Carlos Martínez</span>
+                            <span class="comment-date">15 de abril de 2025, 15:45</span>
+                        </div>
+                        <div class="comment-body">
+                            <p>Según lo que he investigado, con una tormenta de esta magnitud podrían verse desde la Patagonia, especialmente en Ushuaia y Río Gallegos. Pero si es realmente fuerte, quizás hasta en Buenos Aires.</p>
+                        </div>
+                        <div class="comment-actions">
+                            <button class="like-btn" data-comment-id="2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"></path>
+                                    <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                                </svg>
+                                <span class="like-count">5</span>
+                            </button>
+                            <button class="reply-btn" data-comment-id="2">Responder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comentario 2 -->
+        <div class="comment">
+            <div class="comment-avatar">
+                <img src="https://w7.pngwing.com/pngs/164/963/png-transparent-male-avatar-boy-face-man-user-flat-classy-users-icon.png" alt="Avatar de usuario">
+            </div>
+            <div class="comment-content">
+                <div class="comment-header">
+                    <span class="commenter-name">Miguel Ángel Pérez</span>
+                    <span class="comment-date">15 de abril de 2025, 16:10</span>
+                </div>
+                <div class="comment-body">
+                    <p>Muy preocupante lo de las comunicaciones y GPS. Trabajo en logística y dependemos mucho de la geolocalización. ¿Alguien sabe cuánto tiempo pueden durar estas interferencias?</p>
+                </div>
+                <div class="comment-actions">
+                    <button class="like-btn" data-comment-id="3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"></path>
+                            <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                        </svg>
+                        <span class="like-count">7</span>
+                    </button>
+                    <button class="reply-btn" data-comment-id="3">Responder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Paginación de comentarios PROXIMAMENTE-->
+    <div class="comments-pagination">
+        <button class="pagination-btn active">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <button class="pagination-btn next">Siguiente →</button>
+    </div>
+</section>
+
+<!-- Estilos para la sección de comentarios -->
+<style>
+    .comments-section {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 25px;
+        margin: 40px 0;
+    }
+    
+    .comments-section h2 {
+        color: #66ffcc;
+        border-bottom: 2px solid #66ffcc;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .comment-count {
+        color: #ccc;
+        margin-bottom: 20px;
+        font-size: 0.9em;
+    }
+    
+    #comment-count {
+        font-weight: bold;
+        color: #ffcc00;
+    }
+    
+    .comment-form {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+    }
+    
+    .comment-form h3 {
+        color: #66ffcc;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    .comment {
+        display: flex;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .comment.reply {
+        margin-left: 40px;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: none;
+    }
+    
+    .comment-avatar {
+        margin-right: 15px;
+        flex-shrink: 0;
+    }
+    
+    .comment-avatar img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        background-color: #334455;
+    }
+    
+    .comment-content {
+        flex-grow: 1;
+    }
+    
+    .comment-header {
+        margin-bottom: 5px;
+    }
+    
+    .commenter-name {
+        font-weight: bold;
+        color: #ffcc00;
+        margin-right: 10px;
+    }
+    
+    .comment-date {
+        font-size: 0.8em;
+        color: #aaa;
+    }
+    
+    .comment-body {
+        margin-bottom: 10px;
+    }
+    
+    .comment-body p {
+        margin: 0;
+    }
+    
+    .comment-actions {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .like-btn, .reply-btn {
+        background: none;
+        border: none;
+        color: #aaa;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 0.9em;
+        padding: 5px 0;
+    }
+    
+    .like-btn svg {
+        margin-right: 5px;
+    }
+    
+    .like-btn:hover, .reply-btn:hover {
+        color: #66ffcc;
+    }
+    
+    .comments-pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .pagination-btn {
+        width: 35px;
+        height: 35px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .pagination-btn.active {
+        background-color: #66ffcc;
+        color: #0f2027;
+    }
+    
+    .pagination-btn:hover:not(.active) {
+        background-color: rgba(102, 255, 204, 0.3);
+    }
+    
+    .pagination-btn.next {
+        width: auto;
+        padding: 0 15px;
+    }
+    
+    /* Estilo para el formulario de comentarios */
+    #comment-form .form-group {
+        margin-bottom: 15px;
+    }
+    
+    #comment-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #66ffcc;
+    }
+    
+    #comment-form input[type="text"],
+    #comment-form input[type="email"],
+    #comment-form textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #444;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #333;
+    }
+    
+    #comment-form textarea {
+        resize: vertical;
+    }
+    
+    .submit-comment {
+        background-color: #66ffcc;
+        color: #0f2027;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    
+    .submit-comment:hover {
+        background-color: #33cc99;
+    }
+</style>
+
+<!-- Script para la funcionalidad de comentarios -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Manejo del formulario de comentarios
+        const commentForm = document.getElementById('comment-form');
+        const commentsList = document.querySelector('.comments-list');
+        const commentCountElement = document.getElementById('comment-count');
+        let commentCount = parseInt(commentCountElement.textContent);
+
+
+      // Función específica para manejar el clic en el botón de like
+         function handleLikeClick(e) {
+        // Evitar la propagación y comportamiento por defecto
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Verificar si ya está deshabilitado
+        if (this.disabled || this.classList.contains('liked')) {
+            return;
+        }
+        
+        const likeCountElement = this.querySelector('.like-count');
+        let likeCount = parseInt(likeCountElement.textContent);
+        likeCount++; // Incrementar SOLO una vez
+        likeCountElement.textContent = likeCount;
+        
+        // Marcar como liked
+        this.style.color = '#66ffcc';
+        this.classList.add('liked');
+        this.disabled = true;
+    }
+       
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores del formulario
+            const name = document.getElementById('commenter-name').value;
+            const email = document.getElementById('commenter-email').value;
+            const text = document.getElementById('comment-text').value;
+            
+            if (!name || !email || !text) return;
+            
+            // Crear nuevo comentario
+            const newComment = document.createElement('div');
+            newComment.className = 'comment';
+            
+            // Obtener fecha actual formateada
+            const now = new Date();
+            const dateOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+            const timeOptions = { hour: '2-digit', minute: '2-digit' };
+            const formattedDate = `${now.toLocaleDateString('es-ES', dateOptions)}, ${now.toLocaleTimeString('es-ES', timeOptions)}`;
+            
+            newComment.innerHTML = `
+                <div class="comment-avatar">
+                    <img src="/api/placeholder/40/40" alt="Avatar de usuario">
+                </div>
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <span class="commenter-name">${name}</span>
+                        <span class="comment-date">${formattedDate}</span>
+                    </div>
+                    <div class="comment-body">
+                        <p>${text}</p>
+                    </div>
+                    <div class="comment-actions">
+                        <button class="like-btn" data-comment-id="${commentCount + 1}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"></path>
+                                <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                            </svg>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="reply-btn" data-comment-id="${commentCount + 1}">Responder</button>
+                    </div>
+                </div>
+            `;
+            
+            // Añadir comentario al inicio de la lista
+            commentsList.insertBefore(newComment, commentsList.firstChild);
+            
+            // Actualizar contador de comentarios
+            commentCount++;
+            commentCountElement.textContent = commentCount;
+            
+            // Resetear formulario
+            commentForm.reset();
+            
+            // Añadir evento a los nuevos botones
+            setupCommentButtons();
+        });
+        
+        // Función para configurar los botones de comentarios
+        function setupCommentButtons() {
+            // Botones de "Me gusta"
+            document.querySelectorAll('.like-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const likeCountElement = this.querySelector('.like-count');
+                    let likeCount = parseInt(likeCountElement.textContent);
+                    likeCount++;
+                    likeCountElement.textContent = likeCount;
+                    this.style.color = '#66ffcc';
+                    this.disabled = true;
+                });
+            });
+            
+            // Botones de "Responder"
+            document.querySelectorAll('.reply-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Crear formulario de respuesta
+                    const commentId = this.getAttribute('data-comment-id');
+                    const parentComment = this.closest('.comment-content');
+                    
+                    // Comprobar si ya existe un formulario de respuesta
+                    const existingForm = parentComment.querySelector('.reply-form');
+                    if (existingForm) {
+                        existingForm.remove();
+                        return;
+                    }
+                    
+                    // Crear formulario de respuesta
+                    const replyForm = document.createElement('div');
+                    replyForm.className = 'comment-form reply-form';
+                    replyForm.style.marginTop = '15px';
+                    
+                    replyForm.innerHTML = `
+                        <h3>Responder a este comentario</h3>
+                        <form id="reply-form-${commentId}">
+                            <div class="form-group">
+                                <label for="reply-name-${commentId}">Nombre:</label>
+                                <input type="text" id="reply-name-${commentId}" name="reply-name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reply-email-${commentId}">Email (no será publicado):</label>
+                                <input type="email" id="reply-email-${commentId}" name="reply-email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reply-text-${commentId}">Respuesta:</label>
+                                <textarea id="reply-text-${commentId}" name="reply-text" rows="3" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-comment">Publicar respuesta</button>
+                            <button type="button" class="submit-comment" style="background-color: #777; margin-left: 10px;">Cancelar</button>
+                        </form>
+                    `;
+                    
+                    parentComment.appendChild(replyForm);
+                    
+                    // Manejar el envío del formulario de respuesta
+                    const form = document.getElementById(`reply-form-${commentId}`);
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        const name = document.getElementById(`reply-name-${commentId}`).value;
+                        const text = document.getElementById(`reply-text-${commentId}`).value;
+                        
+                        if (!name || !text) return;
+                        
+                        // Crear nueva respuesta
+                        const newReply = document.createElement('div');
+                        newReply.className = 'comment reply';
+                        
+                        // Obtener fecha actual formateada
+                        const now = new Date();
+                        const dateOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+                        const timeOptions = { hour: '2-digit', minute: '2-digit' };
+                        const formattedDate = `${now.toLocaleDateString('es-ES', dateOptions)}, ${now.toLocaleTimeString('es-ES', timeOptions)}`;
+                        
+                        newReply.innerHTML = `
+                            <div class="comment-avatar">
+                                <img src="/api/placeholder/40/40" alt="Avatar de usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="comment-header">
+                                    <span class="commenter-name">${name}</span>
+                                    <span class="comment-date">${formattedDate}</span>
+                                </div>
+                                <div class="comment-body">
+                                    <p>${text}</p>
+                                </div>
+                                <div class="comment-actions">
+                                    <button class="like-btn" data-comment-id="${commentCount + 1}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"></path>
+                                            <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                                        </svg>
+                                        <span class="like-count">0</span>
+                                    </button>
+                                    <button class="reply-btn" data-comment-id="${commentCount + 1}">Responder</button>
+                                </div>
+                            </div>
+                        `;
+                        
+                        // Eliminar el formulario de respuesta
+                        replyForm.remove();
+                        
+                        // Añadir la respuesta después del comentario original
+                        parentComment.appendChild(newReply);
+                        
+                        // Actualizar contador de comentarios
+                        commentCount++;
+                        commentCountElement.textContent = commentCount;
+                        
+                        // Configurar nuevos botones
+                        setupCommentButtons();
+                    });
+                    
+                    // Manejar el botón cancelar
+                    replyForm.querySelector('button[type="button"]').addEventListener('click', function() {
+                        replyForm.remove();
+                    });
+                });
+            });
+        }
+        
+        // Inicializar los botones de comentarios
+        setupCommentButtons();
+        
+        // Manejar la paginación
+        document.querySelectorAll('.pagination-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelector('.pagination-btn.active').classList.remove('active');
+                if (!this.classList.contains('next')) {
+                    this.classList.add('active');
+                } else {
+                    // Si es el botón "Siguiente", activar la siguiente página
+                    const activePage = document.querySelector('.pagination-btn.active');
+                    const nextPage = activePage.nextElementSibling;
+                    if (nextPage && !nextPage.classList.contains('next')) {
+                        nextPage.classList.add('active');
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+
     </main>
 
     <footer>
