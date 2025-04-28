@@ -51,11 +51,23 @@
             font-weight: bold;
         }
 
+        figure {
+            margin: 0;
+            padding: 0;
+        }
+
+        figcaption {
+            font-size: 0.9em;
+            color: #aaa;
+            text-align: center;
+            padding: 5px 0;
+        }
+
         img.hero {
             width: 100%;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
@@ -64,52 +76,415 @@
             margin-top: 40px;
             color: #aaa;
         }
+
+        /* Estilos para navegación */
+        nav {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #66ffcc;
+        }
+
+        /* Estilos para aside */
+        aside {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        aside h3 {
+            color: #ffcc00;
+            margin-top: 0;
+        }
+
+        /* Estilos para compartir en redes sociales */
+        .social-share {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .social-share h3 {
+            color: #66ffcc;
+            margin-bottom: 15px;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .share-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .share-btn svg {
+            margin-right: 8px;
+        }
+        
+        .facebook {
+            background-color: #3b5998;
+        }
+        
+        .twitter {
+            background-color: #1da1f2;
+        }
+        
+        .whatsapp {
+            background-color: #25d366;
+        }
+        
+        /* Estilos para noticias relacionadas */
+        .related-news {
+            margin: 40px 0;
+        }
+        
+        .related-news h2 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #66ffcc;
+            padding-bottom: 10px;
+        }
+        
+        .news-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .news-item {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .news-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-thumbnail {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .news-item h3 {
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: #ffcc00;
+        }
+        
+        .news-item p {
+            font-size: 0.9em;
+            margin: 0;
+        }
+        
+        /* Estilos para enlaces */
+        a {
+            color: #66ffcc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #ffcc00;
+            text-decoration: underline;
+        }
+        
+        /* Estilos para el formulario */
+        .subscription-form {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #66ffcc;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .checkbox-group {
+            margin: 10px 0;
+        }
+
+        .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+            color: #f0f0f0;
+        }
+
+        button {
+            background-color: #66ffcc;
+            color: #0f2027;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #33cc99;
+        }
+
+        address {
+            font-style: normal;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="https://www.lacapital.com.ar/">La Capital</a></li>
+            <li><a href="https://www.lacapital.com.ar/secciones/informaciongral.html">Información General</a></li>
+            <li><a href="https://www.lacapital.com.ar/tormenta-solar-a1036831.html">Tormenta solar</a></li>
+        </ul>
+    </nav>
+
     <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5l8GnsIj4WG0Bar2vDfcROnW-9mgrJ4bb9Q&s" alt="Logo" style="max-width: 300px; height: auto;">
         <h1>Una fuerte tormenta solar que se dirige a la Tierra y provocaría auroras boreales</h1>
         <p class="lead">También podrían registrarse alteraciones en las comunicaciones de radio y problemas con los GPS</p>
         <div class="publish-info">
             <time datetime="2025-04-15">15 de abril de 2025</time>
         </div>
-        <img src="https://media.lacapital.com.ar/p/415085df326b134860193a9c71d2ed08/adjuntos/203/imagenes/102/329/0102329390/2025-04-15-aurora-borealjpg.jpg" alt="Auroras boreales" class="hero">
+        <figure>
+            <img src="https://media.lacapital.com.ar/p/415085df326b134860193a9c71d2ed08/adjuntos/203/imagenes/102/329/0102329390/2025-04-15-aurora-borealjpg.jpg" alt="Auroras boreales" class="hero">
+            <figcaption>Las auroras boreales podrían ser visibles en latitudes inusuales debido a la tormenta solar</figcaption>
+        </figure>
     </header>
 
     <main>
         <article>
-            <p>Una fuerte tormenta solar que se dirige a la Tierra podría producir en la noche de este martes coloridas auroras en latitudes donde habitualmente no ocurren estos fenómenos. También podrían registrarse <strong>alteraciones en las comunicaciones de radio</strong> y problemas con los GPS.</p>
+            <section>
+                <p>Una fuerte tormenta solar que se dirige a la Tierra podría producir en la noche de este martes coloridas auroras en latitudes donde habitualmente no ocurren estos fenómenos. También podrían registrarse <strong>alteraciones en las comunicaciones de radio</strong> y problemas con los GPS.</p>
 
-            <p>El Sol emitió enormes ráfagas de energía a principios de semana, llamadas eyecciones de masa coronal, y los meteorólogos del clima espacial anunciaron una alerta de tormenta geomagnética.</p>
+                <p>El Sol emitió enormes ráfagas de energía a principios de semana, llamadas eyecciones de masa coronal, y los meteorólogos del clima espacial anunciaron una alerta de tormenta geomagnética.</p>
 
-            <p>La intensidad del espectáculo de luces dependerá de cómo el campo magnético de la Tierra interactúe con las ráfagas solares, dijo Shawn Dahl, del Centro de Predicción del Clima Espacial de la Oficina Nacional de Administración Oceánica y Atmosférica (Noaa).</p>
+                <p>La intensidad del espectáculo de luces dependerá de cómo el campo magnético de la Tierra interactúe con las ráfagas solares, dijo Shawn Dahl, del Centro de Predicción del Clima Espacial de la Oficina Nacional de Administración Oceánica y Atmosférica (Noaa).</p>
 
-            <p>El Sol se encuentra en la fase máxima de su ciclo de actividad de 11 años, lo que hace que las exhibiciones de luces sean más comunes y extendidas. Las coloridas auroras boreales adornaron cielos nocturnos en lugares inesperados y los expertos en clima espacial dicen que aún hay más auroras por venir.</p>
+                <p>El Sol se encuentra en la fase máxima de su ciclo de actividad de 11 años, lo que hace que las exhibiciones de luces sean más comunes y extendidas. Las coloridas auroras boreales adornaron cielos nocturnos en lugares inesperados y los expertos en clima espacial dicen que aún hay más auroras por venir.</p>
 
-            <p>"Esto va a continuar de manera intermitente a lo largo del año", remarcó.</p>
+                <p>"Esto va a continuar de manera intermitente a lo largo del año", remarcó.</p>
+            </section>
 
-            <h2>Luces danzantes</h2>
+            <section>
+                <h2>Luces danzantes</h2>
 
-            <p>La pasada primavera, la tormenta geomagnética más fuerte en dos décadas golpeó la Tierra, produciendo exhibiciones de luces en todo el hemisferio norte. Y el otoño pasado, una poderosa tormenta solar deslumbró a los observadores del cielo lejos del Círculo Ártico cuando luces danzantes aparecieron en lugares inesperados, incluyendo Alemania, Reino Unido, Nueva Inglaterra y Nueva York.</p>
+                <p>La pasada primavera, la tormenta geomagnética más fuerte en dos décadas golpeó la Tierra, produciendo exhibiciones de luces en todo el hemisferio norte. Y el otoño pasado, una poderosa tormenta solar deslumbró a los observadores del cielo lejos del Círculo Ártico cuando luces danzantes aparecieron en lugares inesperados, incluyendo Alemania, Reino Unido, Nueva Inglaterra y Nueva York.</p>
 
-            <p>El avistamiento de las auroras boreales es más común cerca del polo norte, donde las partículas cargadas del sol interactúan con la atmósfera de la Tierra.</p>
+                <p>El avistamiento de las auroras boreales es más común cerca del polo norte, donde las partículas cargadas del sol interactúan con la atmósfera de la Tierra.</p>
 
-            <p>Los observadores del cielo están viendo luces más al interior de Estados Unidos y Europa porque el Sol está pasando por un cambio importante. Cada 11 años, sus polos cambian de lugar, causando giros y enredos magnéticos en el camino.</p>
+                <p>Los observadores del cielo están viendo luces más al interior de Estados Unidos y Europa porque el Sol está pasando por un cambio importante. Cada 11 años, sus polos cambian de lugar, causando giros y enredos magnéticos en el camino.</p>
 
-            <p>Se espera que el período activo solar dure al menos hasta finales de este año, aunque será hasta meses después cuando alcance su pico de actividad solar, según indicaron la Nasa y la Noaa.</p>
+                <p>Se espera que el período activo solar dure al menos hasta finales de este año, aunque será hasta meses después cuando alcance su pico de actividad solar, según indicaron la Nasa y la Noaa.</p>
+            </section>
 
-            <p>Las tormentas solares pueden traer más que luces coloridas a la Tierra. Cuando partículas y plasma de rápido movimiento chocan con el campo magnético de la Tierra, pueden interrumpir temporalmente la red eléctrica. El clima espacial también puede interferir con las comunicaciones de radio del control del tráfico aéreo y los satélites en órbita.</p>
+            <section>
+                <p>Las tormentas solares pueden traer más que luces coloridas a la Tierra. Cuando partículas y plasma de rápido movimiento chocan con el campo magnético de la Tierra, pueden interrumpir temporalmente la red eléctrica. El clima espacial también puede interferir con las comunicaciones de radio del control del tráfico aéreo y los satélites en órbita.</p>
 
-            <p>En 1859, una severa tormenta solar desencadenó auroras que llegaron a verse hasta Hawai y provocó incendios en líneas de telégrafo, un evento inusual. Y una tormenta solar de 1972 pudo haber detonado minas marinas magnéticas de Estados Unidos frente a la costa de Vietnam.</p>
+                <p>En 1859, una severa tormenta solar desencadenó auroras que llegaron a verse hasta Hawai y provocó incendios en líneas de telégrafo, un evento inusual. Y una tormenta solar de 1972 pudo haber detonado minas marinas magnéticas de Estados Unidos frente a la costa de Vietnam.</p>
 
-            <p>Los expertos en clima espacial no pueden predecir una tormenta solar con mucha anticipación. En cambio, alertan a las partes relevantes para que se preparen en los días previos a que una erupción solar golpee la Tierra.</p>
+                <p>Los expertos en clima espacial no pueden predecir una tormenta solar con mucha anticipación. En cambio, alertan a las partes relevantes para que se preparen en los días previos a que una erupción solar golpee la Tierra.</p>
 
-            <p>Los pronósticos de auroras boreales se pueden encontrar en el sitio web del Centro de Predicción del Clima Espacial de la Noaa o en una aplicación de pronóstico de auroras.</p>
+                <p>Los pronósticos de auroras boreales se pueden encontrar en el sitio web del Centro de Predicción del Clima Espacial de la <a href="https://www.noaa.gov/" target="_blank">NOAA</a> o en una aplicación de pronóstico de auroras.</p>
+            </section>
         </article>
+        
+        <section class="social-share">
+            <h3>Compartir noticia</h3>
+            <div class="share-buttons">
+                <button class="share-btn facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
+                        <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1.02-1.1h3.22V.45L14.61.42C10.45.42 9.5 3.07 9.5 5.33v2.14H6.89V12h2.61v11h5v-11h3.56l.33-4.53z"/>
+                    </svg>
+                    Facebook
+                </button>
+                <button class="share-btn twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
+                        <path d="M23.95 4.57a10 10 0 01-2.82.77 4.96 4.96 0 002.16-2.72c-.95.56-2 .96-3.13 1.19a4.92 4.92 0 00-8.4 4.48 13.93 13.93 0 01-10.12-5.13 4.93 4.93 0 001.52 6.57 4.87 4.87 0 01-2.23-.62v.06c0 2.38 1.7 4.37 3.95 4.82a4.96 4.96 0 01-2.22.08 4.93 4.93 0 004.6 3.42 9.87 9.87 0 01-7.3 2.04 13.87 13.87 0 007.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63a9.95 9.95 0 002.44-2.55z"/>
+                    </svg>
+                    Twitter
+                </button>
+                <button class="share-btn whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
+                        <path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.104 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.713 1.444 5.71 1.444 6.585 0 11.946-5.335 11.946-11.896 0-3.176-1.24-6.165-3.471-8.447zm-8.475 18.265c-1.788 0-3.539-.456-5.089-1.311l-.363-.22-3.786.991 1.009-3.682-.244-.387c-.961-1.532-1.47-3.301-1.47-5.145 0-5.298 4.317-9.61 9.63-9.61 2.57 0 4.985 1 6.802 2.817 1.817 1.817 2.818 4.233 2.818 6.802-.001 5.3-4.318 9.61-9.63 9.61zm5.096-7.003c-.287-.147-1.699-.839-1.962-.935-.264-.094-.455-.141-.646.142-.19.281-.741.934-.909 1.127-.168.192-.336.216-.623.073-.287-.144-1.214-.45-2.32-1.428-.86-.766-1.44-1.703-1.608-1.991-.168-.282-.018-.436.126-.578.13-.128.287-.334.43-.501.146-.167.194-.287.29-.478.099-.191.048-.359-.024-.502-.075-.144-.646-1.564-.886-2.144-.232-.57-.47-.49-.646-.501-.168-.008-.365-.01-.56-.01-.196 0-.511.074-.78.359-.268.284-1.021 1.006-1.021 2.453 0 1.449 1.065 2.85 1.213 3.047.147.195 2.06 3.2 5.114 4.393 3.053 1.192 3.053.797 3.6.75.547-.048 1.768-.716 2.016-1.426.255-.705.255-1.314.18-1.438-.074-.131-.27-.21-.56-.357z"/>
+                    </svg>
+                    WhatsApp
+                </button>
+            </div>
+        </section>
+
+
+        <!-- Script de compartir -->
+<script>
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+  
+    document.querySelector('.facebook').addEventListener('click', function() {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    });
+  
+    document.querySelector('.twitter').addEventListener('click', function() {
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+    });
+  
+    document.querySelector('.whatsapp').addEventListener('click', function() {
+      window.open(`https://api.whatsapp.com/send?text=${title}%20${url}`, '_blank');
+    });
+  </script>
+        
+        <section class="related-news">
+            <h2>Noticias relacionadas</h2>
+            <a href="https://www.lacapital.com.ar/informacion-general/tragedia-napoles-al-menos-cuatro-muertos-desplomarse-la-cabina-un-teleferico-n10190884.html" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="news-container">
+                <div class="news-item">
+                    <img src="https://media.lacapital.com.ar/p/ea3f862ed76e4909cc44721d373694d9/adjuntos/203/imagenes/102/333/0102333369/642x0/smart/imagenapojpg.jpg" alt="TragediaNapoles" class="news-thumbnail">
+                    <h3>Tragedia en Nápoles: al menos cuatro muertos tras desplomarse la cabina de un teleférico</h3>
+                    <p>En la cabina viajaban cinco pasajeros, de los cuales solo uno ha sido encontrado con vida, aunque su estado sigue siendo grave</p>
+                </div>
+                
+               
+                <a href="https://www.lacapital.com.ar/economia/sancor-rematara-mas-43-mil-kilos-quesos-pagarle-sus-acreedores-n10190504.html" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="news-item">
+                        <img src="https://media.lacapital.com.ar/p/1ff0a341b094551ccd0e961b5b57282d/adjuntos/203/imagenes/101/677/0101677687/642x0/smart/quesosjpg.jpg" alt="Sancor" class="news-thumbnail">
+                        <h3>Sancor rematará más de 43 mil kilos de quesos para pagarle a sus acreedores</h3>
+                        <p>La empresa se encuentra inmersa en una crisis desde hace ya varios años y los acreedores comenzaron a ejecutar la garantía de sus préstamos</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.lacapital.com.ar/informacion-general/el-numero-turistas-extranjeros-brasil-se-disparo-un-478-la-mayoria-fueron-argentinos-n10190847.html" target="_blank" style="text-decoration: none; color: inherit">
+                <div class="news-item">
+                    <img src="https://media.lacapital.com.ar/p/737a5e80713aaa7abfc794d71b790d8a/adjuntos/203/imagenes/102/332/0102332966/642x0/smart/imagecamboriujpg.jpg" alt="Brasil" class="news-thumbnail">
+                    <h3>El número de turistas extranjeros en Brasil se disparó un 47,8%: la mayoría fueron argentinos</h3>
+                    <p>Se incremento un 76,72% el flujo a través de la frontera, mientras que los países europeos casi duplicaron el volumen de visitas al gigante sudamericano</p>
+                </div>
+            </a>
+                
+                <a href="https://www.lacapital.com.ar/informacion-general/arca-elimino-los-impuestos-del-30-plataformas-videojuegos-cuales-seran-las-beneficiadas-n10190791.html" target="_blank" style="text-decoration: none; color: inherit">
+                <div class="news-item">
+                    <img src="https://media.lacapital.com.ar/p/dbaaf59d1e60dd93af7ec1fd039e4742/adjuntos/203/imagenes/026/277/0026277895/642x0/smart/videojuegojpg.jpg" alt="Arca" class="news-thumbnail">
+                    <h3>Arca eliminó los impuestos del 30% en plataformas de videojuegos: cuáles serán las beneficiadas</h3>
+                    <p> El gobierno anunció que los pagos en dólares de este tipo de servicios ya no se verán afectados por el impuesto de retención. Por su parte, se mantiene el IVA</p>
+                </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="subscription-form">
+            <h2>Mantente informado sobre fenómenos espaciales</h2>
+            <p>Suscríbete a nuestro boletín para recibir alertas de auroras boreales y las últimas noticias sobre clima espacial.</p>
+            
+            <form action="/suscripcion" method="post">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Temas de interés:</label>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="auroras" name="intereses" value="auroras">
+                        <label for="auroras">Alertas de auroras boreales</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="tormentas" name="intereses" value="tormentas">
+                        <label for="tormentas">Tormentas solares</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="espacial" name="intereses" value="espacial">
+                        <label for="espacial">Noticias de clima espacial</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="astronomia" name="intereses" value="astronomia">
+                        <label for="astronomia">Eventos astronómicos</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ubicacion">Tu ubicación:</label>
+                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad, País">
+                </div>
+                
+                <button type="submit">Suscribirme ahora</button>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <p>Artículo extraido del diario "La Capital"</p>
+        <p>Artículo extraído del diario "La Capital"</p>
+        <address>
+            Contacto: <a href="mailto:noticias@lacapital.com.ar">noticias@lacapital.com.ar</a><br>
+            La Capital - Diario | Calle Sarmiento 763, Rosario, Argentina
+        </address>
     </footer>
 </body>
 </html>
