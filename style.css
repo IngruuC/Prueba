@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -284,198 +285,420 @@ address {
 }
 
 
--- Estilos para la sección de comentarios --
+/* Estilos para la sección de comentarios */
+.comments-section {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 40px 0;
+}
 
-    .comments-section {
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        padding: 25px;
-        margin: 40px 0;
+.comments-section h2 {
+    color: #66ffcc;
+    border-bottom: 2px solid #66ffcc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-count {
+    color: #ccc;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+#comment-count {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.comment-form {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.comment-form h3 {
+    color: #66ffcc;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.comment {
+    display: flex;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comment.reply {
+    margin-left: 40px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+}
+
+.comment-avatar {
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.comment-avatar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    background-color: #334455;
+}
+
+.comment-content {
+    flex-grow: 1;
+}
+
+.comment-header {
+    margin-bottom: 5px;
+}
+
+.commenter-name {
+    font-weight: bold;
+    color: #ffcc00;
+    margin-right: 10px;
+}
+
+.comment-date {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.comment-body {
+    margin-bottom: 10px;
+}
+
+.comment-body p {
+    margin: 0;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.like-btn, .reply-btn {
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+.like-btn svg {
+    margin-right: 5px;
+}
+
+.like-btn:hover, .reply-btn:hover {
+    color: #66ffcc;
+}
+
+.comments-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pagination-btn {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-btn.active {
+    background-color: #66ffcc;
+    color: #0f2027;
+}
+
+.pagination-btn:hover:not(.active) {
+    background-color: rgba(102, 255, 204, 0.3);
+}
+
+.pagination-btn.next {
+    width: auto;
+    padding: 0 15px;
+}
+
+/* Estilo para el formulario de comentarios */
+#comment-form .form-group {
+    margin-bottom: 15px;
+}
+
+#comment-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #66ffcc;
+}
+
+#comment-form input[type="text"],
+#comment-form input[type="email"],
+#comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+#comment-form textarea {
+    resize: vertical;
+}
+
+.submit-comment {
+    background-color: #66ffcc;
+    color: #0f2027;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.submit-comment:hover {
+    background-color: #33cc99;
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+/* Para dispositivos móviles pequeños */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
     }
     
-    .comments-section h2 {
-        color: #66ffcc;
-        border-bottom: 2px solid #66ffcc;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
+    h1 {
+        font-size: 1.6em;
     }
     
-    .comment-count {
-        color: #ccc;
-        margin-bottom: 20px;
-        font-size: 0.9em;
+    h2 {
+        font-size: 1.3em;
     }
     
-    #comment-count {
-        font-weight: bold;
-        color: #ffcc00;
+    .lead {
+        font-size: 1.1em;
     }
     
-    .comment-form {
-        background-color: rgba(0, 0, 0, 0.3);
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 30px;
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
     
-    .comment-form h3 {
-        color: #66ffcc;
-        margin-top: 0;
-        margin-bottom: 15px;
+    nav li {
+        margin: 5px 0;
+    }
+    
+    .news-container {
+        grid-template-columns: 1fr;
     }
     
     .comment {
-        display: flex;
-        margin-bottom: 25px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .comment.reply {
-        margin-left: 40px;
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: none;
+        flex-direction: column;
     }
     
     .comment-avatar {
-        margin-right: 15px;
-        flex-shrink: 0;
-    }
-    
-    .comment-avatar img {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-        background-color: #334455;
-    }
-    
-    .comment-content {
-        flex-grow: 1;
-    }
-    
-    .comment-header {
-        margin-bottom: 5px;
-    }
-    
-    .commenter-name {
-        font-weight: bold;
-        color: #ffcc00;
-        margin-right: 10px;
-    }
-    
-    .comment-date {
-        font-size: 0.8em;
-        color: #aaa;
-    }
-    
-    .comment-body {
         margin-bottom: 10px;
     }
     
-    .comment-body p {
-        margin: 0;
-    }
-    
-    .comment-actions {
-        display: flex;
-        gap: 15px;
-    }
-    
-    .like-btn, .reply-btn {
-        background: none;
-        border: none;
-        color: #aaa;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        font-size: 0.9em;
-        padding: 5px 0;
-    }
-    
-    .like-btn svg {
-        margin-right: 5px;
-    }
-    
-    .like-btn:hover, .reply-btn:hover {
-        color: #66ffcc;
+    .comment.reply {
+        margin-left: 20px;
     }
     
     .comments-pagination {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+}
+
+/* Para dispositivos móviles medianos */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        padding: 15px;
     }
     
-    .pagination-btn {
-        width: 35px;
-        height: 35px;
-        background-color: rgba(0, 0, 0, 0.3);
-        border: none;
-        border-radius: 5px;
-        color: #fff;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+    h1 {
+        font-size: 1.8em;
     }
     
-    .pagination-btn.active {
-        background-color: #66ffcc;
-        color: #0f2027;
+    .news-container {
+        grid-template-columns: 1fr;
     }
     
-    .pagination-btn:hover:not(.active) {
-        background-color: rgba(102, 255, 204, 0.3);
+    .share-buttons {
+        flex-direction: column;
+        align-items: center;
     }
     
-    .pagination-btn.next {
-        width: auto;
-        padding: 0 15px;
+    .share-btn {
+        width: 80%;
     }
     
-    /* Estilo para el formulario de comentarios */
-    #comment-form .form-group {
-        margin-bottom: 15px;
+    .comment.reply {
+        margin-left: 30px;
+    }
+}
+
+/* Para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        max-width: 720px;
     }
     
-    #comment-form label {
+    .news-container {
+        gap: 15px;
+    }
+    
+    .news-item h3 {
+        font-size: 1em;
+    }
+}
+
+/* Para desktops pequeños */
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+        max-width: 960px;
+    }
+}
+
+/* Para desktops grandes */
+@media (min-width: 1200px) {
+    body {
+        max-width: 1140px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    .lead {
+        font-size: 1.3em;
+    }
+    
+    .news-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Para orientación vertical/horizontal en dispositivos móviles */
+@media (orientation: portrait) {
+    img.hero {
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 991px) {
+    img.hero {
+        max-height: 200px;
+        object-fit: cover;
+    }
+    
+    .news-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Para soportar modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+        color: #f0f0f0;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #f0f0f0;
+        border-color: #555;
+    }
+    
+    .news-item, 
+    .subscription-form,
+    .comments-section,
+    .comment-form {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* Para pantallas de alta densidad de píxeles */
+@media (-webkit-min-device-pixel-ratio: 2), 
+       (min-resolution: 192dpi) {
+    body {
+        font-weight: 300;
+    }
+}
+
+/* Ajustes de accesibilidad para lectores de pantalla y preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .news-item:hover {
+        transform: none;
+    }
+}
+
+/* Para impresión */
+@media print {
+    body {
+        background: none;
+        color: black;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .social-share,
+    .comments-section,
+    .subscription-form,
+    nav {
+        display: none;
+    }
+    
+    h1, h2, h3 {
+        color: black;
+    }
+    
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+    
+    img.hero {
+        max-width: 50%;
+        margin: 0 auto;
         display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color: #66ffcc;
+        box-shadow: none;
     }
     
-    #comment-form input[type="text"],
-    #comment-form input[type="email"],
-    #comment-form textarea {
-        width: 100%;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #444;
-        background-color: rgba(255, 255, 255, 0.9);
-        color: #333;
+    .news-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
     }
     
-    #comment-form textarea {
-        resize: vertical;
+    .news-item {
+        background: none;
+        padding: 0;
+        break-inside: avoid;
     }
-    
-    .submit-comment {
-        background-color: #66ffcc;
-        color: #0f2027;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background-color 0.3s;
-    }
-    
-    .submit-comment:hover {
-        background-color: #33cc99;
-    }
-
-
-    
+}
