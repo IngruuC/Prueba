@@ -1,0 +1,329 @@
+/* ==================== MEDIA QUERIES ==================== */
+
+/* Para dispositivos móviles pequeños */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    .lead {
+        font-size: 1.1em;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav li {
+        margin: 5px 0;
+    }
+    
+    .news-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .comment {
+        flex-direction: column;
+    }
+    
+    .comment-avatar {
+        margin-bottom: 10px;
+    }
+    
+    .comment.reply {
+        margin-left: 20px;
+    }
+    
+    .comments-pagination {
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+
+    .subscribe-btn {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    .login-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+    
+    .side-ad,
+    .side-content.right .fixed-sidebar {
+        position: static !important;
+        width: 100% !important;
+        max-width: 200px !important;
+        transform: none !important;
+        right: auto !important;
+        top: auto !important;
+        margin: 20px auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
+}
+
+/* Para dispositivos móviles medianos */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .news-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .share-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .share-btn {
+        width: 80%;
+    }
+    
+    .comment.reply {
+        margin-left: 30px;
+    }
+    
+    .side-ad,
+    .side-content.right .fixed-sidebar {
+        position: static !important;
+        width: 100% !important;
+        max-width: 250px !important;
+        transform: none !important;
+        right: auto !important;
+        top: auto !important;
+        margin: 20px auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
+}
+
+/* Para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        max-width: 720px;
+    }
+    
+    .news-container {
+        gap: 15px;
+    }
+    
+    .news-item h3 {
+        font-size: 1em;
+    }
+    
+    .header-actions {
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .subscribe-btn {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .login-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .sidebar {
+        width: 280px;
+        left: -280px;
+    }
+
+    .left-actions,
+    .right-actions {
+        gap: 8px;
+    }
+}
+
+/* Para desktops pequeños */
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+        max-width: 960px;
+    }
+}
+
+/* Para desktops grandes */
+@media (min-width: 1200px) {
+    body {
+        max-width: 1140px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    .lead {
+        font-size: 1.3em;
+    }
+    
+    .news-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Para pantallas más pequeñas que no pueden mostrar anuncios laterales */
+@media (max-width: 1400px) {
+    .side-ad,
+    .side-content.right .fixed-sidebar {
+        position: static !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        transform: none !important;
+        right: auto !important;
+        top: auto !important;
+        margin: 20px auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
+    
+    .side-content.right .fixed-sidebar .news-item img {
+        width: 70px;
+        height: 50px;
+    }
+    
+    .side-content.right .fixed-sidebar .news-item .news-title {
+        font-size: 13px;
+    }
+}
+
+/* Ajuste del contenido principal cuando hay anuncios laterales */
+@media (min-width: 1400px) {
+    .container {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}
+
+/* Para orientación vertical/horizontal en dispositivos móviles */
+@media (orientation: portrait) {
+    img.hero {
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 991px) {
+    img.hero {
+        max-height: 200px;
+        object-fit: cover;
+    }
+    
+    .news-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Para soportar modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+        color: #f0f0f0;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #f0f0f0;
+        border-color: #555;
+    }
+    
+    .news-item, 
+    .subscription-form,
+    .comments-section,
+    .comment-form {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* Para pantallas de alta densidad de píxeles */
+@media (-webkit-min-device-pixel-ratio: 2), 
+       (min-resolution: 192dpi) {
+    body {
+        font-weight: 300;
+    }
+}
+
+/* Ajustes de accesibilidad para lectores de pantalla y preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .news-item:hover {
+        transform: none;
+    }
+}
+
+/* Para impresión */
+@media print {
+    body {
+        background: none;
+        color: black;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .social-share,
+    .comments-section,
+    .subscription-form,
+    nav,
+    .main-header,
+    .sidebar {
+        display: none;
+    }
+    
+    h1, h2, h3 {
+        color: black;
+    }
+    
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+    
+    img.hero {
+        max-width: 50%;
+        margin: 0 auto;
+        display: block;
+        box-shadow: none;
+    }
+    
+    .news-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .news-item {
+        background: none;
+        padding: 0;
+        break-inside: avoid;
+    }
+}
