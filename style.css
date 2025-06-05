@@ -1,4 +1,4 @@
-
+/* ==================== ESTILOS BASE ==================== */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -20,6 +20,12 @@ h1 {
     color: #ffcc00;
 }
 
+h2 {
+    font-size: 1.5em;
+    margin: 30px 0 15px;
+    color: #66ffcc;
+}
+
 .lead {
     font-size: 1.2em;
     font-weight: bold;
@@ -29,12 +35,6 @@ h1 {
 .publish-info {
     color: #ccc;
     margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin: 30px 0 15px;
-    color: #66ffcc;
 }
 
 p {
@@ -71,7 +71,19 @@ footer {
     color: #aaa;
 }
 
-/* Estilos para navegación */
+/* Enlaces */
+a {
+    color: #66ffcc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* ==================== NAVEGACIÓN ==================== */
 nav {
     background-color: rgba(0, 0, 0, 0.3);
     padding: 10px;
@@ -101,7 +113,195 @@ nav a:hover {
     color: #66ffcc;
 }
 
-/* Estilos para aside */
+/* ==================== HEADER PRINCIPAL ==================== */
+.main-header {
+    background-color: white;
+    padding: 10px 0;
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.left-actions,
+.right-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botones de navegación */
+.menu-btn, .notif-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.menu-btn:hover, .notif-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-dot {
+    color: #64b5f6;
+    margin: 0 2px;
+}
+
+/* Botones de acción */
+.subscribe-btn {
+    background: #f57c00;
+    border: 1px solid #333;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.subscribe-btn:hover {
+    background-color: #f57c00;
+    color: white;
+}
+
+.login-btn {
+    background: none;
+    border: 1px solid #333;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.login-btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* ==================== SIDEBAR ==================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    z-index: 2000;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar-menu {
+    padding: 0;
+}
+
+.menu-item {
+    display: block;
+    padding: 16px 20px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s;
+    font-size: 16px;
+}
+
+.menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+.menu-item.highlight {
+    color: #1976d2;
+    font-weight: 500;
+}
+
+.menu-item.exclusive {
+    color: #ff9800;
+    font-weight: 500;
+}
+
+.menu-item.exclusive::before {
+    content: "★ ";
+    margin-right: 5px;
+}
+
+/* Overlay para cerrar sidebar */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==================== ASIDE ==================== */
 aside {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 15px;
@@ -114,7 +314,7 @@ aside h3 {
     margin-top: 0;
 }
 
-/* Estilos para compartir en redes sociales */
+/* ==================== REDES SOCIALES ==================== */
 .social-share {
     margin: 30px 0;
     text-align: center;
@@ -165,7 +365,7 @@ aside h3 {
     background-color: #25d366;
 }
 
-/* Estilos para noticias relacionadas */
+/* ==================== NOTICIAS RELACIONADAS ==================== */
 .related-news {
     margin: 40px 0;
 }
@@ -211,19 +411,141 @@ aside h3 {
     margin: 0;
 }
 
-/* Estilos para enlaces */
-a {
-    color: #66ffcc;
+/* ==================== CONTENEDORES Y LAYOUT ==================== */
+.container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 16px;
+}
+
+.content-placeholder {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #666;
+}
+
+/* ==================== PUBLICIDAD LATERAL ==================== */
+.side-ad {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px;
+    z-index: 1000;
+}
+
+.side-ad.left {
+    left: 20px;
+}
+
+.side-ad img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.side-ad img:hover {
+    transform: scale(1.05);
+}
+
+/* Contenido lateral derecho con publicidad y noticias más leídas */
+.side-content.right .fixed-sidebar {
+    position: fixed !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    right: 20px !important;
+    width: 200px !important;
+    z-index: 1000 !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+}
+
+.side-content.right .fixed-sidebar > a:first-child {
+    display: block !important;
+    margin-bottom: 20px;
+}
+
+.side-content.right .fixed-sidebar > a:first-child img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.side-content.right .fixed-sidebar > a:first-child img:hover {
+    transform: scale(1.05);
+}
+
+.side-content.right .fixed-sidebar .most-read {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.side-content.right .fixed-sidebar .most-read h3 {
+    background: #333;
+    color: white;
+    margin: 0;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.side-content.right .fixed-sidebar .news-item {
+    display: flex;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
     text-decoration: none;
-    transition: color 0.3s;
+    color: inherit;
+    transition: background-color 0.3s ease;
 }
 
-a:hover {
-    color: #ffcc00;
-    text-decoration: underline;
+.side-content.right .fixed-sidebar .news-item:hover {
+    background-color: #f8f9fa;
 }
 
-/* Estilos para el formulario */
+.side-content.right .fixed-sidebar .news-item:last-child {
+    border-bottom: none;
+}
+
+.side-content.right .fixed-sidebar .news-item img {
+    width: 60px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.side-content.right .fixed-sidebar .news-item .news-text {
+    flex: 1;
+}
+
+.side-content.right .fixed-sidebar .news-item .news-title {
+    font-size: 12px;
+    line-height: 1.3;
+    color: #333;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ==================== FORMULARIOS ==================== */
 .subscription-form {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -243,13 +565,18 @@ label {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+textarea {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #444;
     background-color: rgba(255, 255, 255, 0.9);
     color: #333;
+}
+
+textarea {
+    resize: vertical;
 }
 
 .checkbox-group {
@@ -284,8 +611,7 @@ address {
     font-size: 0.9em;
 }
 
-
-/* Estilos para la sección de comentarios */
+/* ==================== SECCIÓN DE COMENTARIOS ==================== */
 .comments-section {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -435,7 +761,7 @@ address {
     padding: 0 15px;
 }
 
-/* Estilo para el formulario de comentarios */
+/* Formulario de comentarios específico */
 #comment-form .form-group {
     margin-bottom: 15px;
 }
@@ -478,6 +804,7 @@ address {
 }
 
 /* ==================== MEDIA QUERIES ==================== */
+
 /* Para dispositivos móviles pequeños */
 @media (max-width: 480px) {
     body {
@@ -524,6 +851,33 @@ address {
     .comments-pagination {
         flex-wrap: wrap;
     }
+    
+    .logo {
+        font-size: 20px;
+    }
+
+    .subscribe-btn {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    .login-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+    
+    .side-ad,
+    .side-content.right .fixed-sidebar {
+        position: static !important;
+        width: 100% !important;
+        max-width: 200px !important;
+        transform: none !important;
+        right: auto !important;
+        top: auto !important;
+        margin: 20px auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
 }
 
 /* Para dispositivos móviles medianos */
@@ -552,6 +906,19 @@ address {
     .comment.reply {
         margin-left: 30px;
     }
+    
+    .side-ad,
+    .side-content.right .fixed-sidebar {
+        position: static !important;
+        width: 100% !important;
+        max-width: 250px !important;
+        transform: none !important;
+        right: auto !important;
+        top: auto !important;
+        margin: 20px auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
 }
 
 /* Para tablets */
@@ -566,6 +933,34 @@ address {
     
     .news-item h3 {
         font-size: 1em;
+    }
+    
+    .header-actions {
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .subscribe-btn {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .login-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .sidebar {
+        width: 280px;
+        left: -280px;
+    }
+
+    .left-actions,
+    .right-actions {
+        gap: 8px;
     }
 }
 
@@ -592,6 +987,39 @@ address {
     
     .news-container {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Para pantallas más pequeñas que no pueden mostrar anuncios laterales */
+@media (max-width: 1400px) {
+    .side-ad,
+    .side-content.right .fixed-sidebar {
+        position: static !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        transform: none !important;
+        right: auto !important;
+        top: auto !important;
+        margin: 20px auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
+    
+    .side-content.right .fixed-sidebar .news-item img {
+        width: 70px;
+        height: 50px;
+    }
+    
+    .side-content.right .fixed-sidebar .news-item .news-title {
+        font-size: 13px;
+    }
+}
+
+/* Ajuste del contenido principal cuando hay anuncios laterales */
+@media (min-width: 1400px) {
+    .container {
+        margin-left: 200px;
+        margin-right: 200px;
     }
 }
 
@@ -671,7 +1099,9 @@ address {
     .social-share,
     .comments-section,
     .subscription-form,
-    nav {
+    nav,
+    .main-header,
+    .sidebar {
         display: none;
     }
     

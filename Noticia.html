@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Header suscripcion e icono hamburgesa ☰ -->
+<header class="main-header">
+  <div class="header-actions">
+    <div class="left-actions">
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">&#9776;</button>
+      <button class="notif-btn" aria-label="Notificaciones">&#128276;</button>
+    </div>
+
+    <a href="#" class="logo">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5l8GnsIj4WG0Bar2vDfcROnW-9mgrJ4bb9Q&s" alt="Logo" style="max-width: 250px; height: auto;">
+    </a>
+
+    <div class="right-actions">
+        <button class="subscribe-btn">Suscribite</button>
+      <button class="login-btn">Ingresar</button>
+    </div>
+  </div>
+</header>
+
+    
+
+   <!-- Menu de navegación -->
     <nav>
         <ul>
             <li><a href="https://www.lacapital.com.ar/">La Capital</a></li>
@@ -15,8 +38,57 @@
         </ul>
     </nav>
 
+
+<div class="container">
+        <!-- Publicidad Izquierda -->
+        <aside class="side-ad left">
+            <a href="https://msrinversionesydesarrollos.com/desarrollos" target="_blank">
+                <img src="https://tpc.googlesyndication.com/simgad/8543942867084996648?" alt="Publicidad La Gallega" />
+            </a>
+        </aside>
+
+
+        <!-- Overlay para cerrar sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Menú</h3>
+            <button class="close-btn" id="closeBtn">&times;</button>
+        </div>
+        
+        <div class="sidebar-menu">
+            <a href="#" class="menu-item highlight">⚡ Últimas Noticias</a>
+            <a href="#" class="menu-item">Beneficios La Capital</a>
+            <a href="#" class="menu-item exclusive">Exclusivo para suscriptores</a>
+            <a href="#" class="menu-item">Policiales</a>
+            <a href="#" class="menu-item">Ciudad</a>
+            <a href="#" class="menu-item">Ovación</a>
+            <a href="#" class="menu-item">Newell's</a>
+            <a href="#" class="menu-item">Central</a>
+            <a href="#" class="menu-item">Región</a>
+            <a href="#" class="menu-item">Economía</a>
+            <a href="#" class="menu-item">Agroclave</a>
+            <a href="#" class="menu-item">Política</a>
+            <a href="#" class="menu-item">Zoom</a>
+            <a href="#" class="menu-item">Negocios</a>
+            <a href="#" class="menu-item">Motores</a>
+            <a href="#" class="menu-item">Turismo</a>
+            <a href="#" class="menu-item">Información general</a>
+            <a href="#" class="menu-item exclusive">Opinión</a>
+            <a href="#" class="menu-item">Elegidos por el editor</a>
+            <a href="#" class="menu-item">Educación</a>
+            <a href="#" class="menu-item">FNGA</a>
+            <a href="#" class="menu-item">Comercio Internacional FNGA</a>
+            <a href="#" class="menu-item">Estrictamente Social</a>
+        </div>
+    </nav>
+
+
+
+    <!-- Noticia principal -->
     <header>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5l8GnsIj4WG0Bar2vDfcROnW-9mgrJ4bb9Q&s" alt="Logo" style="max-width: 300px; height: auto;">
         <h1>Una fuerte tormenta solar que se dirige a la Tierra y provocaría auroras boreales</h1>
         <p class="lead">También podrían registrarse alteraciones en las comunicaciones de radio y problemas con los GPS</p>
         <div class="publish-info">
@@ -71,6 +143,36 @@
         
 
 
+ <!-- Noticias y publicidades derecha --> 
+            <aside class="side-content right">
+    <!-- Contenedor fijo que incluye publicidad y noticias -->
+    <div class="fixed-sidebar">
+        <!-- Publicidad lateral -->
+        <a href="https://www.oncity.com.ar/promociones" target="_blank">
+            <img src="https://tpc.googlesyndication.com/simgad/2186193248769616247" alt="oncity promo" />
+        </a>
+ <!-- Noticias más leídas -->
+        <div class="most-read">
+            <h3>Las más leídas</h3>
+            
+            <a href="#" class="news-item">
+                <img src="https://media.lacapital.com.ar/p/3a3d70b4ad4d967ecfbf963e570a0f46/adjuntos/203/imagenes/102/417/0102417429/642x0/smart/foto-taxi-cavatorta-yanotti-cescajpg.jpg" alt="Noticia 1">
+                <div class="news-text">
+                    <p class="news-title">Uber: histórico acuerdo entre peones y titulares de taxis</p>
+                </div>
+            </a>
+            
+            <a href="#" class="news-item">
+                <img src="https://media.lacapital.com.ar/p/ab534938082b35509d218c9099bfdd5e/adjuntos/203/imagenes/102/392/0102392292/642x0/smart/matias-bottonijpeg.jpeg" alt="Noticia 2">
+                <div class="news-text">
+                    <p class="news-title">El nadador Matías Bottoni fue trasladado al Heni</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+
         <!-- Botones para compartir -->
         <section class="social-share">
             <h3>Compartir noticia</h3>
@@ -118,6 +220,54 @@
   </script>
         
 
+<script>
+// Variables del DOM
+const menuBtn = document.getElementById('menuBtn');
+const sidebar = document.getElementById('sidebar');
+const closeBtn = document.getElementById('closeBtn');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+// Función para abrir el sidebar
+function openSidebar() {
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar el sidebar
+function closeSidebar() {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Event listeners
+menuBtn.addEventListener('click', openSidebar);
+closeBtn.addEventListener('click', closeSidebar);
+sidebarOverlay.addEventListener('click', closeSidebar);
+
+// Cerrar sidebar con la tecla ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+        closeSidebar();
+    }
+});
+
+// Manejar clicks en los elementos del menú
+document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('Navegando a:', this.textContent.trim());
+        // Aquí puedes agregar la lógica de navegación
+        closeSidebar();
+    });
+});
+
+// Prevenir que el sidebar se cierre cuando se hace click dentro de él
+sidebar.addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+  </script>
     
 
         <!-- Links/imagenes para seccion de Noticias Relacionadas -->
