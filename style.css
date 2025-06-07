@@ -542,7 +542,6 @@ aside h3 {
     margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -826,3 +825,27 @@ aside h3 {
             color: #0d6efd;
             text-decoration: underline;
         }
+        .input-icon {
+            position: absolute;
+            right: 10px;
+            top: 38px; 
+            font-size: 22px;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .form-group {
+            position: relative;
+        }
+        input.error {
+            border: 2px solid #e74c3c !important;
+        }
+        input.success {
+            border: 2px solid #2ecc40 !important;
+        }
+        .input-icon.error {
+            color: #e74c3c;
+        }
+        .input-icon.success {
+            color: #2ecc40;
+        }
+

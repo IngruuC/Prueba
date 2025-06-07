@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="style.css">  
-    <script src="suscripcion.js"></script>
 </head>
 <body>
     <section class="subscription-form">
+        <h2 id="hola-titulo" style="color:#010100;">HOLA</h2>
         <!-- Imagen de La Capital -->
         <div style="text-align:center;">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5l8GnsIj4WG0Bar2vDfcROnW-9mgrJ4bb9Q&s" alt="La Capital" style="max-width:250px;height:auto;">
@@ -24,26 +24,31 @@
                     <div class="form-group">
                         <label for="nombre">Nombre completo:</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        <span class="input-icon" id="icon-nombre"></span>
                         <div class="error" id="error-nombre"></div>
                     </div>
                     <div class="form-group">
                         <label for="email">Correo electrónico:</label>
                         <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                        <span class="input-icon" id="icon-email"></span>
                         <div class="error" id="error-email"></div>
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña:</label>
                         <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                        <span class="input-icon" id="icon-password"></span>
                         <div class="error" id="error-password"></div>
                     </div>
                     <div class="form-group">
                         <label for="repetir-password">Repetir contraseña:</label>
                         <input type="password" id="repetir-password" name="repetir-password" placeholder="Repite tu contraseña" required>
+                        <span class="input-icon" id="icon-repetir-password"></span>
                         <div class="error" id="error-repetir-password"></div>
                     </div>
                     <div class="form-group">
                         <label for="edad">Edad:</label>
                         <input type="number" id="edad" name="edad" min="0" required>
+                        <span class="input-icon" id="icon-edad"></span>
                         <div class="error" id="error-edad"></div>
                     </div>
                 </div>
@@ -51,26 +56,31 @@
                     <div class="form-group">
                         <label for="telefono">Teléfono:</label>
                         <input type="text" id="telefono" name="telefono" placeholder="Ej: 3411234567" required>
+                        <span class="input-icon" id="icon-telefono"></span>
                         <div class="error" id="error-telefono"></div>
                     </div>
                     <div class="form-group">
                         <label for="direccion">Dirección:</label>
                         <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle 123" required>
+                        <span class="input-icon" id="icon-direccion"></span>
                         <div class="error" id="error-direccion"></div>
                     </div>
                     <div class="form-group">
                         <label for="ciudad">Ciudad:</label>
                         <input type="text" id="ciudad" name="ciudad" required>
+                        <span class="input-icon" id="icon-ciudad"></span>
                         <div class="error" id="error-ciudad"></div>
                     </div>
                     <div class="form-group">
                         <label for="cp">Código Postal:</label>
                         <input type="text" id="cp" name="cp" required>
+                        <span class="input-icon" id="icon-cp"></span>
                         <div class="error" id="error-cp"></div>
                     </div>
                     <div class="form-group">
                         <label for="dni">DNI:</label>
                         <input type="text" id="dni" name="dni" required>
+                        <span class="input-icon" id="icon-dni"></span>
                         <div class="error" id="error-dni"></div>
                     </div>
                 </div>
@@ -81,6 +91,6 @@
         </form>
         <a href="Noticia.html" class="volver">← Volver a la noticia</a>
     </section>
-  
+<script src="subscription.js"></script>
 </body>
 </html>
