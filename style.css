@@ -546,71 +546,7 @@ aside h3 {
     overflow: hidden;
 }
 
-/* ==================== FORMULARIOS ==================== */
-.subscription-form {
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-}
 
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #66ffcc;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #333;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.checkbox-group {
-    margin: 10px 0;
-}
-
-.checkbox-group label {
-    display: inline;
-    font-weight: normal;
-    margin-left: 5px;
-    color: #f0f0f0;
-}
-
-button {
-    background-color: #66ffcc;
-    color: #0f2027;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #33cc99;
-}
-
-address {
-    font-style: normal;
-    margin-top: 20px;
-    font-size: 0.9em;
-}
 
 /* ==================== SECCIÓN DE COMENTARIOS ==================== */
 .comments-section {
@@ -804,3 +740,88 @@ address {
     background-color: #33cc99;
 }
 
+/* =================FORMULARIO NUEVO DE SUSCRIPCIÓN ==================== */
+
+        body {
+            background: #f6f6f6;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .subscription-form {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 2em 1em;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px #0003;
+        }
+        .subscription-form h2 {
+            text-align: center;
+            margin-bottom: 1em;
+            font-size: 2em;
+            letter-spacing: 1px;
+        }
+        .subscription-form p {
+            text-align: center;
+            margin-bottom: 2em;
+            color: #444;
+        }
+        .form-row {
+            display: flex;
+            gap: 2em;
+            flex-wrap: wrap;
+        }
+        .form-column {
+            flex: 1 1 320px;
+            min-width: 0;
+        }
+        .form-group {
+            margin-bottom: 1.1em;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.3em;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.5em;
+            font-size: 1em;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            border-color: #0d6efd;
+        }
+        .error {
+            color: #c00;
+            font-size: 0.95em;
+            margin-top: 0.2em;
+            min-height: 1.25em;
+        }
+        @media (max-width: 800px) {
+            .form-row { flex-direction: column; gap: 0; }
+            .form-column { width: 100%; }
+        }
+        button#enviar-btn {
+            background: #0d6efd;
+            color: #fff;
+            font-size: 1.1em;
+            padding: 0.7em 2.5em;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: auto;
+            display: block;
+        }
+        button#enviar-btn:hover {
+            background: #084298;
+        }
+        .volver {
+            display: block;
+            text-align: center;
+            margin: 1em auto 0;
+            color: #0d6efd;
+            text-decoration: underline;
+        }

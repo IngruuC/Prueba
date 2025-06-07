@@ -23,7 +23,7 @@
     </a>
 
     <div class="right-actions">
-        <button class="subscribe-btn">Suscribite</button>
+        <a href="suscripcion.html" class="subscribe-btn">Suscribite</a>
       <button class="login-btn">Ingresar</button>
     </div>
   </div>
@@ -314,55 +314,7 @@ sidebar.addEventListener('click', function(e) {
 
 
 
-         <!-- Formulario para suscribirse -->
-        <section class="subscription-form">
-            <h2>Mantente informado sobre fenómenos espaciales</h2>
-            <p>Suscríbete a nuestro boletín para recibir alertas de auroras boreales y las últimas noticias sobre clima espacial.</p>
-            
-            <form action="https://formspree.io/f/mpwdqzbg" method="post"> <!-- Metodo para enviar formulario con FORMSPREE.IO -->
-                <div class="form-group">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Temas de interés:</label>
-                    
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="auroras" name="intereses" value="auroras">
-                        <label for="auroras">Alertas de auroras boreales</label>
-                    </div>
-                    
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="tormentas" name="intereses" value="tormentas">
-                        <label for="tormentas">Tormentas solares</label>
-                    </div>
-                    
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="espacial" name="intereses" value="espacial">
-                        <label for="espacial">Noticias de clima espacial</label>
-                    </div>
-                    
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="astronomia" name="intereses" value="astronomia">
-                        <label for="astronomia">Eventos astronómicos</label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="ubicacion">Tu ubicación:</label>
-                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad, País">
-                </div>
-                
-                <input type="hidden" name="_subject" value="Nueva suscripción al boletín">
-                <button type="submit">Suscribirme ahora</button>
-            </form>
-        </section>
+        
 
 
 
@@ -739,3 +691,4 @@ sidebar.addEventListener('click', function(e) {
     </footer>
 </body>
 </html>
+

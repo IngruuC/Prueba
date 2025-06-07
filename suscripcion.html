@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Suscripción</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+    <section class="subscription-form">
+        <!-- Imagen de La Capital -->
+    <div style="text-align:center;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5l8GnsIj4WG0Bar2vDfcROnW-9mgrJ4bb9Q&s" alt="La Capital" style="max-width:250px;height:auto;">
+    </div>
+        <p>
+            Suscríbete a nuestro boletín para recibir alertas de auroras boreales y las últimas noticias sobre clima espacial.
+        </p>
+        <form id="form-suscripcion" action="https://formspree.io/f/mjkrgdwl" method="POST" autocomplete="off">  
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        <div class="error" id="error-nombre"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                        <div class="error" id="error-email"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                        <div class="error" id="error-password"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="repetir-password">Repetir contraseña:</label>
+                        <input type="password" id="repetir-password" name="repetir-password" placeholder="Repite tu contraseña" required>
+                        <div class="error" id="error-repetir-password"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" name="edad" min="0" required>
+                        <div class="error" id="error-edad"></div>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" placeholder="Ej: 3411234567" required>
+                        <div class="error" id="error-telefono"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle 123" required>
+                        <div class="error" id="error-direccion"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad" required>
+                        <div class="error" id="error-ciudad"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cp">Código Postal:</label>
+                        <input type="text" id="cp" name="cp" required>
+                        <div class="error" id="error-cp"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dni">DNI:</label>
+                        <input type="text" id="dni" name="dni" required>
+                        <div class="error" id="error-dni"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:20px;">
+                <button type="submit" id="enviar-btn">Enviar</button>
+            </div>
+        </form>
+        <a href="Noticia.html" class="volver">← Volver a la noticia</a>
+    </section>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+
+        // Campos del formulario
+        const form = document.getElementById('form-suscripcion');
+        const campos = [
+            'nombre', 'email', 'password', 'repetir-password', 'edad',
+            'telefono', 'direccion', 'ciudad', 'cp', 'dni'
+        ];
+
+        // Mensajes de error por campo
+        const mensajes = {
+            nombre: "El nombre debe tener más de 6 letras y al menos un espacio.",
+            email: "Ingresa un email válido.",
+            password: "La contraseña debe tener al menos 8 caracteres, letras y números.",
+            'repetir-password': "Ambas contraseñas deben ser iguales.",
+            edad: "Debes tener al menos 18 años.",
+            telefono: "Debe ser un número de al menos 7 dígitos, sin espacios ni guiones.",
+            direccion: "Debe tener al menos 5 caracteres, letras, números y un espacio en el medio.",
+            ciudad: "Mínimo 3 caracteres.",
+            cp: "Mínimo 3 caracteres.",
+            dni: "Debe ser un número de 7 u 8 dígitos."
+        };
+
+        // Validadores
+        function validarCampo(id) {
+            const val = document.getElementById(id).value.trim();
+            switch(id) {
+                case 'nombre':
+                    return val.length > 6 && /\s/.test(val);
+                case 'email':
+                    return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val);
+                case 'password':
+                    return /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/.test(val);
+                case 'repetir-password':
+                    return val === document.getElementById('password').value;
+                case 'edad':
+                    return /^\d+$/.test(val) && parseInt(val, 10) >= 18;
+                case 'telefono':
+                    return /^\d{7,}$/.test(val);
+                case 'direccion':
+                    return val.length >= 5 && /[a-zA-Z]/.test(val) && /\d/.test(val) && /\s/.test(val);
+                case 'ciudad':
+                    return val.length >= 3;
+                case 'cp':
+                    return val.length >= 3;
+                case 'dni':
+                    return /^\d{7,8}$/.test(val);
+                default:
+                    return true;
+            }
+        }
+
+        // Control de si el usuario ya interactuó con el campo
+        const touched = {};
+
+        campos.forEach(function(id) {
+            touched[id] = false;
+            const input = document.getElementById(id);
+
+            // Al salir del campo, validamos y mostramos error si corresponde
+            input.addEventListener('blur', function() {
+                touched[id] = true;
+                if (!validarCampo(id)) {
+                    document.getElementById('error-' + id).textContent = mensajes[id];
+                } else {
+                    document.getElementById('error-' + id).textContent = '';
+                }
+            });
+
+            // Mientras escribe, solo mostramos error si ya tocó el campo
+            input.addEventListener('input', function() {
+                if (touched[id]) {
+                    if (!validarCampo(id)) {
+                        document.getElementById('error-' + id).textContent = mensajes[id];
+                    } else {
+                        document.getElementById('error-' + id).textContent = '';
+                    }
+                }
+            });
+
+            // Al enfocar limpiamos el error
+            input.addEventListener('focus', function() {
+                document.getElementById('error-' + id).textContent = '';
+            });
+        });
+
+        // Validación completa al enviar
+        form.addEventListener('submit', function(e) {
+            let hayErrores = false;
+            let errores = [];
+            let datos = {};
+            campos.forEach(function(id) {
+                const valido = validarCampo(id);
+                const input = document.getElementById(id);
+                datos[id] = input.value.trim();
+                touched[id] = true; // Lo marcamos como ya tocado, así se muestran errores a partir de aquí
+                if (!valido) {
+                    document.getElementById('error-' + id).textContent = mensajes[id];
+                    errores.push(mensajes[id]);
+                    hayErrores = true;
+                } else {
+                    document.getElementById('error-' + id).textContent = '';
+                }
+            });
+            if (hayErrores) {
+                e.preventDefault(); // No envía el formulario si hay errores
+            } else {
+                let resumen = `Datos de suscripción:\n\nNombre: ${datos.nombre}\nEmail: ${datos.email}\nEdad: ${datos.edad}\nTeléfono: ${datos.telefono}\nDirección: ${datos.direccion}\nCiudad: ${datos.ciudad}\nCódigo Postal: ${datos.cp}\nDNI: ${datos.dni}`;
+                alert(resumen);
+                
+            }
+        });
+    });
+    </script>
+</body>
+</html>
