@@ -1,6 +1,9 @@
-// Script para validar el formulario de suscripción
+// Script para validar el formulario de suscripción - VERSIÓN JSONPLACEHOLDER POST
 
 document.addEventListener('DOMContentLoaded', function() {
+    // CARGAR DATOS DEL LOCALSTORAGE AL INICIAR
+    loadDataFromLocalStorage();
+
     // BONUS: Actualizar título en tiempo real
     const tituloHola = document.getElementById('hola-titulo');
     const inputNombre = document.getElementById('nombre');
@@ -16,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         inputNombre.addEventListener('focus', actualizarTitulo);
     }
 
-    // Validaciones por campo
+    // Validaciones por campo (SIN CAMBIOS)
     const form = document.getElementById('form-suscripcion');
     const campos = [
         'nombre', 'email', 'password', 'repetir-password', 'edad',
@@ -132,8 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Validación completa al enviar
+    // Validación completa al enviar - ACTUALIZADA PARA POST
     form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Siempre prevenir envío por defecto
+
         let hayErrores = false;
         let errores = [];
         let datos = {};
@@ -165,22 +170,188 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
+        
         if (hayErrores) {
-            e.preventDefault(); // No envía el formulario si hay errores
-            alert("Errores:\n" + errores.join("\n"));
+            showModal('Error de Validación', 'Errores encontrados:<br>' + errores.join('<br>'), false);
         } else {
-            // SOLO mostramos el mensaje, pero dejamos enviar el form normalmente
-            let mensaje = "Datos ingresados correctamente:\n";
-            mensaje += "Nombre: " + datos.nombre + "\n";
-            mensaje += "Email: " + datos.email + "\n";
-            mensaje += "Edad: " + datos.edad + "\n";
-            mensaje += "Teléfono: " + datos.telefono + "\n";
-            mensaje += "Dirección: " + datos.direccion + "\n";
-            mensaje += "Ciudad: " + datos.ciudad + "\n";
-            mensaje += "Código Postal: " + datos.cp + "\n";
-            mensaje += "DNI: " + datos.dni + "\n";
-            alert(mensaje);
-            // El formulario se enviará normalmente a Getform
+            enviarDatos(datos);
         }
     });
+
+    // FUNCIÓN ACTUALIZADA PARA ENVIAR CON POST A JSONPLACEHOLDER
+    function enviarDatos(datos) {
+        // Mostrar modal de carga
+        showModal('Enviando...', 'Por favor espera mientras enviamos tus datos...', null);
+
+        // URL de JSONPlaceholder
+        const baseUrl = 'https://jsonplaceholder.typicode.com/posts';
+        
+        // Preparar datos para envío
+        const postData = {
+            title: 'Suscripción Newsletter',
+            body: 'Datos de suscripción al newsletter',
+            userId: 1,
+            ...datos // Agregar todos los datos del formulario
+        };
+
+        // Enviar con fetch usando POST
+        fetch(baseUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8'
+            },
+            body: JSON.stringify(postData)
+        })
+        .then(response => {
+            return response.json().then(data => ({
+                status: response.status,
+                ok: response.ok,
+                data: data
+            }));
+        })
+        .then(result => {
+            if (result.ok) {
+                handleSuccess(result.data, datos);
+            } else {
+                handleError(result.status, result.data);
+            }
+        })
+        .catch(error => {
+            handleNetworkError(error);
+        });
+    }
+
+    // FUNCIÓN PARA MANEJAR ÉXITO
+    function handleSuccess(responseData, sentData) {
+        // Guardar datos ENVIADOS en LocalStorage (no la respuesta del servidor)
+        saveDataToLocalStorage(sentData);
+
+        let message = '¡Suscripción exitosa!<br><br>';
+        message += '<strong>Datos recibidos del servidor:</strong><br>';
+        message += '<div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-top: 10px; border-left: 4px solid #2ecc40;">';
+        
+        if (responseData) {
+            message += `<strong>ID:</strong> ${responseData.id || 'N/A'}<br>`;
+            message += `<strong>Título:</strong> ${responseData.title || 'N/A'}<br>`;
+            message += `<strong>Usuario ID:</strong> ${responseData.userId || 'N/A'}<br>`;
+            
+            // Mostrar datos enviados que fueron procesados
+            Object.keys(sentData).forEach(key => {
+                if (responseData[key]) {
+                    message += `<strong>${key}:</strong> ${responseData[key]}<br>`;
+                }
+            });
+        }
+        message += '</div>';
+        
+        showModal('¡Éxito!', message, true);
+    }
+
+    // FUNCIÓN PARA MANEJAR ERRORES DEL SERVIDOR
+    function handleError(status, errorData) {
+        let message = `<strong>Error ${status}</strong><br><br>`;
+        message += 'No se pudo procesar la suscripción.<br><br>';
+        
+        if (errorData) {
+            message += '<div style="background-color: #ffebee; padding: 15px; border-radius: 5px; margin-top: 10px; border-left: 4px solid #e74c3c;">';
+            message += '<strong>Detalles del error:</strong><br>';
+            message += formatData(errorData);
+            message += '</div>';
+        }
+        
+        showModal('Error', message, false);
+    }
+
+    // FUNCIÓN PARA MANEJAR ERRORES DE RED
+    function handleNetworkError(error) {
+        let message = '<strong>Error de conexión</strong><br><br>';
+        message += 'No se pudo conectar con el servidor.<br>';
+        message += 'Por favor, verifica tu conexión a internet e intenta nuevamente.<br><br>';
+        
+        message += '<div style="background-color: #ffebee; padding: 15px; border-radius: 5px; margin-top: 10px; border-left: 4px solid #e74c3c;">';
+        message += '<strong>Detalles técnicos:</strong><br>';
+        message += error.message;
+        message += '</div>';
+        
+        showModal('Error de Conexión', message, false);
+    }
+
+    // FUNCIÓN PARA FORMATEAR DATOS
+    function formatData(data) {
+        if (typeof data === 'object') {
+            let formatted = '';
+            Object.keys(data).forEach(key => {
+                formatted += `<strong>${key}:</strong> ${data[key]}<br>`;
+            });
+            return formatted;
+        }
+        return data;
+    }
+
+    // FUNCIÓN PARA MOSTRAR MODAL
+    function showModal(title, content, isSuccess) {
+        const modal = document.getElementById('responseModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+
+        modalTitle.textContent = title;
+        modalTitle.style.color = isSuccess === true ? '#2ecc40' : isSuccess === false ? '#e74c3c' : '#333';
+        modalBody.innerHTML = content;
+        
+        modal.style.display = 'block';
+    }
+
+    // FUNCIÓN PARA CERRAR MODAL
+    function closeModal() {
+        document.getElementById('responseModal').style.display = 'none';
+    }
+
+    // Event listeners del modal
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    document.getElementById('responseModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+
+    // Cerrar modal con ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // FUNCIONES DE LOCALSTORAGE
+    function saveDataToLocalStorage(data) {
+        try {
+            localStorage.setItem('newsletterData', JSON.stringify(data));
+            console.log('Datos guardados en LocalStorage:', data);
+        } catch (error) {
+            console.error('Error al guardar en LocalStorage:', error);
+        }
+    }
+
+    function loadDataFromLocalStorage() {
+        try {
+            const savedData = localStorage.getItem('newsletterData');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                console.log('Datos cargados desde LocalStorage:', data);
+                
+                // Cargar datos en los campos del formulario
+                Object.keys(data).forEach(key => {
+                    const input = document.getElementById(key);
+                    if (input) {
+                        input.value = data[key];
+                        // Actualizar título si es el campo nombre
+                        if (key === 'nombre' && tituloHola) {
+                            tituloHola.textContent = 'HOLA ' + data[key];
+                        }
+                    }
+                });
+            }
+        } catch (error) {
+            console.error('Error al cargar desde LocalStorage:', error);
+        }
+    }
 });

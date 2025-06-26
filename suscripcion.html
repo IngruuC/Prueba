@@ -18,7 +18,9 @@
         <p>
             Suscríbete a nuestro boletín para recibir alertas de auroras boreales y las últimas noticias sobre clima espacial.
         </p>
-        <form id="form-suscripcion" action="https://getform.io/f/akknpxna" method="POST" autocomplete="off">  <!--FORMULARIO, ENVIO DE DATOS A GETFORM -->
+        
+        
+        <form id="form-suscripcion" autocomplete="off">
             <div class="form-row">
                 <div class="form-column">
                     <div class="form-group">
@@ -91,6 +93,19 @@
         </form>
         <a href="Noticia.html" class="volver">← Volver a la noticia</a>
     </section>
+
+    <!-- SOLO AGREGAR EL MODAL AL FINAL - SIN TOCAR NADA MÁS -->
+    <div id="responseModal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);">
+        <div style="background-color: #fff; padding: 30px; border-radius: 10px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #eee;">
+                <h2 id="modalTitle" style="margin: 0; color: #333; font-size: 1.5em;">Resultado</h2>
+                <button id="closeModal" style="color: #999; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1; border: none; background: none; padding: 0;">&times;</button>
+            </div>
+            <div id="modalBody" style="line-height: 1.6; color: #333;">
+            </div>
+        </div>
+    </div>
+
 <script src="subscription.js"></script>
 </body>
 </html>
